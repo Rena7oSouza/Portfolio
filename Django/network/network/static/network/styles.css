@@ -1,0 +1,20 @@
+.btnHearth {
+    background-color: none;
+    border: none;
+}
+
+.btnHearth:not(:hover) {
+    background-color: none;
+    border: none;
+    outline: none;
+}
+
+.btnHearth:active {
+    border: none;
+    outline: none;
+}
+
+.btnHearth:focus {
+    border: none;
+    outline: none;
+}

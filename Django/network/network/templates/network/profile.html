@@ -1,0 +1,112 @@
+{% extends "network/layout.html" %}
+
+{% block body %}
+<script>
+    function likeHandler(id, likedPosts) {
+        const btnLike = document.getElementById(`${id}`);
+        const likeCount = document.getElementById(`likeCount${id}`);
+
+        var like = likedPosts.indexOf(id) >= 0 ? true : false;
+
+        if (like === true) {
+            fetch(`/unlike/${id}`)
+                .then(response => response.json())
+                .then(result => {
+                    btnLike.classList.remove("fa-heart");
+                    btnLike.classList.add("fa-heart-o");
+                    likeCount.innerText = result.likes;
+                    like = !like;
+                    window.location.reload();
+                });
+        }
+        else {
+            fetch(`/like/${id}`)
+                .then(response => response.json())
+                .then(result => {
+                    btnLike.classList.remove("fa-heart-o");
+                    btnLike.classList.add("fa-heart");
+                    likeCount.innerText = result.likes;
+                    like = !like;
+                    window.location.reload();
+                });
+        }
+    }
+
+</script>
+<div style="display: flex;  align-items: center;">
+    <h1 style="margin-right: 20px;">{{ uProfile }}</h1>
+    {% if user.is_authenticated %}
+    {% if user != uProfile %}
+    {% if isFollowing %}
+    <form action="{% url 'unfollow' %}" method="post" style="margin-right: 10px;">
+        {% csrf_token%}
+        <input type="hidden" name="followinput" value="{{ uProfile }}" />
+        <input type="submit" value="Unfollow" class="btn btn-outline-danger" />
+    </form>
+    {% else %}
+    <form action="{% url 'follow' %}" method="post">
+        {% csrf_token%}
+        <input type="hidden" name="followinput" value="{{ uProfile }}" />
+        <input type="submit" value="Follow" class="btn btn-outline-primary" />
+    </form>
+    {% endif %}
+    {% endif %}
+    {% endif %}
+</div>
+
+<div class="container">
+    <div class="row d-flex justify-content-center">
+        <h3 class="col-3">Following: {{ following.count }}</h3>
+        <h3 class="col-3">Followers: {{ followers.count }}</h3>
+    </div>
+</div>
+<div class="my-5"></div>
+{% for post in showedPosts %}
+<div class="my-1 mx-5 border border-primary">
+    <div class="border border-primary p-3">
+        <h2><a href="{% url 'profile' id=post.user.id %}">{{post.user}}</a></h2>
+        <h4>{{post.body}}</h4>
+        <h6>{{post.time}}</h6>
+        {% if user.is_authenticated %}
+        {% if post.id in likedPosts %}
+        <button class="btn btnHearth fa fa-heart" style="color: red;" id="{{ post.id }}"
+            onclick="likeHandler('{{post.id}}', '{{likedPosts}}')"></button>
+        {% else %}
+        <button class="btn btnHearth fa fa-heart-o" style="color: red;" id="{{ post.id }}"
+            onclick="likeHandler('{{post.id}}', '{{likedPosts}}')"></button>
+        {% endif %}
+        <span id="likeCount{{ post.id }}">{{ post.postlu.count }}</span>
+        {% else %}
+        {% if post.id in likedPosts %}
+        <button class="btn btnHearth fa fa-heart" style="color: red;"></button>
+        {% else %}
+        <button class="btn btnHearth fa fa-heart-o" style="color: red;"></button>
+        {% endif %}
+        <span id="likeCount{{ post.id }}">{{ post.postlu.count }}</span>
+        {% endif %}
+    </div>
+</div>
+</div>
+{% endfor %}
+<nav aria-label="Page navigation example">
+    <ul class="pagination d-flex justify-content-center my-5">
+        {% if showedPosts.has_previous %}
+        <li class="page-item">
+            <a class="page-link" href="?page={{showedPosts.previous_page_number}}" aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+            </a>
+        </li>
+        {% endif %}
+        <li class="page-item"><a class="page-link" href="#">1</a></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        {% if showedPosts.has_next %}
+        <li class="page-item">
+            <a class="page-link" href="?page={{showedPosts.next_page_number}}" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+            </a>
+        </li>
+        {% endif %}
+    </ul>
+</nav>
+{% endblock %}

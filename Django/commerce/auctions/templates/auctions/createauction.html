@@ -1,0 +1,43 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+<h2>Active Auctions</h2>
+<form action="{% url 'createauction' %}" method="post">
+  {% csrf_token %}
+  <div class="row mb-3">
+    <label for="itemName" class="col-sm-1 col-form-label">Item:</label>
+    <div class="col-sm-11">
+      <input type="text" class="form-control" id="itemName" placeholder="Item Name" name="itemName">
+    </div>
+  </div>
+  <div class="row mb-3 d-flex justify-content-center align-items-center">
+    <label for="category" class="col-sm-1 col-form-label">Category:</label>
+    <div class="col-sm-11">
+      <select name="category" id="category">
+        {% for category in categories %}
+        <option>{{ category }}</option>
+        {% endfor %}
+      </select>
+    </div>
+  </div>
+  <div class="row mb-3">
+    <label for="description" class="col-sm-1 col-form-label">Description:</label>
+    <div class="col-sm-11">
+      <input type="text" class="form-control" id="description" placeholder="Description" name="description">
+    </div>
+  </div>
+  <div class="row mb-3">
+    <label for="itemImage" class="col-sm-1 col-form-label">Image:</label>
+    <div class="col-sm-11">
+      <input type="text" class="form-control" id="itemImage" placeholder="Image URL of your item" name="itemImage">
+    </div>
+  </div>
+  <div class="row mb-3">
+    <label for="startBid" class="col-sm-1 col-form-label">Start Bid:</label>
+    <div class="col-sm-11">
+      <input type="number" class="form-control" id="startBid" placeholder="Start Bid" name="startBid">
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary">Create Auction</button>
+</form>
+{% endblock %}

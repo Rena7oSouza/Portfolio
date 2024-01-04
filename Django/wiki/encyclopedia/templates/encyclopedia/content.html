@@ -1,0 +1,12 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    {{ title }}
+{% endblock %}
+
+{% block body %}
+    {{ content|safe }}
+    {% if title != "Error" %}
+    <a href="{% url 'editPage' %}" class="btn btn-primary">Edit Page</a>
+    {% endif %}
+{% endblock %}

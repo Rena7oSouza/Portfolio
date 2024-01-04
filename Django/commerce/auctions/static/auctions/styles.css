@@ -1,0 +1,26 @@
+body {
+    padding: 10px;
+}
+
+.imgCard 
+{
+    display: block;
+    margin: auto;
+    height: 200px; 
+    width: 200px; 
+    object-fit: contain;
+}
+
+.imgAuction{
+    display: block;
+    height: 400px; 
+    width: 400px; 
+    object-fit: contain;
+}
+
+.descriptionAuction {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

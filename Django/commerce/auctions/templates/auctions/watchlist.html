@@ -1,0 +1,27 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+<h2>Watchlist</h2>
+<div class="row row-cols-1 row-cols-md-5 g-5">
+    {% for auction in list %}
+    <div class="col">
+        <a href="{% url 'auction' id=auction.id %}">
+            <div class="card h-100">
+                <img src="{{ auction.itemImage }}" class="card-img-top imgCard" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{ auction.itemName}}</h5>
+        </a>
+        <p class="card-text"><strong>{{auction.itemCategory}}</strong><br> {{ auction.description}}<br>
+            Current
+            Bid: US$ {{auction.startBid | floatformat:2}}</p>
+    </div>
+    <div class="card-footer">
+        <small class="text-body-secondary">{{auction.ownerUser}}</small>
+    </div>
+</div>
+
+</div>
+{% endfor %}
+</div>
+
+{% endblock %}

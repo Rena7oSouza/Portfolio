@@ -1,0 +1,170 @@
+{% extends "network/layout.html" %}
+
+{% block body %}
+
+<script>
+    function cookie(name) {
+        const myCookie = `; ${document.cookie}`;
+
+        const splitedCookie = myCookie.split(`; ${name}=`);
+        if (splitedCookie.length == 2) return splitedCookie.pop().split(';').shift();
+
+    }
+
+    function submitHandler(id) {
+        const bodyValue = document.getElementById(`textarea${id}`).value;
+        const bodyPost = document.getElementById(`body${id}`);
+        const modal = document.getElementById(`modalEditPost${id}`);
+        fetch(`/edit/${id}`, {
+            method: "POST",
+            headers: {
+                "Content-type": "application/json", "X-CSRFToken": cookie("csrftoken")
+            },
+            body: JSON.stringify({
+                content: bodyValue
+            })
+
+        }).then(response => {
+            return response.json();
+        }).then(result => {
+            bodyPost.innerHTML = result.data;
+            modal.classList.remove("show");
+            modal.setAttribute("aria-hidden", "true");
+            modal.setAttribute("style", "display: none");
+
+            const modalsBackdrops = document.getElementsByClassName("modal-backdrop");
+
+            for (let i = 0; i < modalsBackdrops.length; i++) {
+                document.body.removeChild(modalsBackdrops[i]);
+            }
+
+        }
+        )
+    }
+
+
+    function likeHandler(id, likedPosts) {
+        const btnLike = document.getElementById(`${id}`);
+        const likeCount = document.getElementById(`likeCount${id}`);
+
+        var like = likedPosts.indexOf(id) >= 0 ? true : false;
+
+        if (like === true) {
+            fetch(`/unlike/${id}`)
+                .then(response => response.json())
+                .then(result => {
+                    btnLike.classList.remove("fa-heart");
+                    btnLike.classList.add("fa-heart-o");
+                    likeCount.innerText = result.likes;
+                    like = !like;
+                    window.location.reload();
+                });
+        }
+        else {
+            fetch(`/like/${id}`)
+                .then(response => response.json())
+                .then(result => {
+                    btnLike.classList.remove("fa-heart-o");
+                    btnLike.classList.add("fa-heart");
+                    likeCount.innerText = result.likes;
+                    like = !like;
+                    window.location.reload();
+                });
+        }
+    }
+
+
+
+</script>
+
+<h1>Posts</h1>
+{% if user.is_authenticated %}
+<div class="my-5 mx-5 border border-primary">
+    <div class="border border-primary p-3">
+        <h2 class="mb-3">New Post</h2>
+        <form action="{% url 'myPost'%}" method="post">
+            {% csrf_token %}
+            <textarea class="form-control mb-1" name="postBody" row="5" cols="100"></textarea>
+            <input type="submit" class="btn btn-primary  mb-3" value="Send">
+        </form>
+    </div>
+</div>
+{% endif %}
+{% for post in showedPosts %}
+<div class="my-1 mx-5 border border-primary">
+    <div class="border border-primary p-3">
+        <h2><a href="{% url 'profile' id=post.user.id %}">{{post.user}}</a></h2></br>
+        {% if user.is_authenticated %}
+        {% if user == post.user %}
+        <div class="d-flex justify-content-arround">
+            <a href="#" data-toggle="modal" data-target="#modalEditPost{{ post.id }}">Edit</a>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="modalEditPost{{ post.id }}" tabindex="-1" role="dialog"
+            aria-labelledby="modalEditPost{{ post.id }}" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Edit Post</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <textarea rows="5" cols="100" id="textarea{{ post.id }}" class="form-control"
+                            name="changePostBody">{{ post.body }}</textarea>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary" onclick="submitHandler('{{post.id}}')">Save
+                            changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endif%}
+        {% endif %}
+        <h4 id="body{{ post.id }}">{{post.body}}</h4>
+        <h6>{{post.time}}</h6>
+        {% if user.is_authenticated %}
+        {% if post.id in likedPosts %}
+        <button class="btn btnHearth fa fa-heart" style="color: red;" id="{{ post.id }}"
+            onclick="likeHandler('{{post.id}}', '{{likedPosts}}')"></button>
+        {% else %}
+        <button class="btn btnHearth fa fa-heart-o" style="color: red;" id="{{ post.id }}"
+            onclick="likeHandler('{{post.id}}', '{{likedPosts}}')"></button>
+        {% endif %}
+        <span id="likeCount{{ post.id }}">{{ post.postlu.count }}</span>
+        {% else %}
+        {% if post.id in likedPosts %}
+        <button class="btn btnHearth fa fa-heart" style="color: red;"></button>
+        {% else %}
+        <button class="btn btnHearth fa fa-heart-o" style="color: red;"></button>
+        {% endif %}
+        <span id="likeCount{{ post.id }}">{{ post.postlu.count }}</span>
+        {% endif %}
+    </div>
+</div>
+{% endfor %}
+<nav aria-label="Page navigation example">
+    <ul class="pagination d-flex justify-content-center my-5">
+        {% if showedPosts.has_previous %}
+        <li class="page-item">
+            <a class="page-link" href="?page={{showedPosts.previous_page_number}}" aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+            </a>
+        </li>
+        {% endif %}
+        <li class="page-item"><a class="page-link" href="#">1</a></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        {% if showedPosts.has_next %}
+        <li class="page-item">
+            <a class="page-link" href="?page={{showedPosts.next_page_number}}" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+            </a>
+        </li>
+        {% endif %}
+    </ul>
+</nav>
+{% endblock %}

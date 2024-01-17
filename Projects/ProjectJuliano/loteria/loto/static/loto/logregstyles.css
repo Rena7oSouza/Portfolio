@@ -1,0 +1,209 @@
+/* The body element is styled to remove default margins and padding */
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* The .container class is used to style a div that will contain all other divs */
+.container {
+  /* The display property is set to flex to use the Flexbox layout for the container */
+  display: flex;
+
+  /* The flex-direction property is set to row to lay out the flex items from left to right */
+  flex-direction: row;
+
+  /* The flex-wrap property is set to wrap to allow the flex items to wrap onto multiple lines */
+  flex-wrap: wrap;
+
+  /* The height property is set to 100vh to make the container take up the full height of the viewport */
+  height: 100vh;
+}
+
+/* The .div-left and .div-right classes are used to style the left and right divs respectively */
+.div-left,
+.div-right {
+  /* The flex property is a shorthand for flex-grow, flex-shrink, and flex-basis. It's set to 1 0 50%, which means the flex items will grow and shrink to take up half of the container's width */
+  flex: 1 0 50%;
+
+  /* The box-sizing property is set to border-box to include the padding and border in the element's total width and height */
+  box-sizing: border-box;
+
+  /* The overflow property is set to auto to add a scrollbar inside the div if the content is too long */
+  overflow: auto;
+}
+
+/*Style the div-left*/
+.div-left {
+  /* Change the background color of div-left*/
+  background-color: blueviolet;
+  color: white;
+}
+
+.div-left img {
+  /* The width property is set to 100% to make the image take up the full width of its container */
+  width: 20%;
+
+  margin: 2%;
+}
+
+.div-left .content {
+  /* The display property is set to flex to use the Flexbox layout for the content div */
+  display: flex;
+
+  /* The flex-direction property is set to column to stack the flex items vertically */
+  flex-direction: row;
+
+  /* The align-items property is set to center to center the flex items along the cross axis */
+  align-items: center;
+
+}
+
+.div-left p {
+  margin: 2%;
+}
+
+/* ====== Start of Register CSS ====== */
+.inputText {
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  width: 100%;
+  height: 25%;
+  margin-top: 2%;
+  font-size: 18px;
+}
+
+.inputText:focus {
+  outline: none;
+}
+
+.div-right {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  padding: 5%;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.inputButton {
+  margin-left: 0;
+  width: 100px;
+  height: 50px;
+  outline: none;
+}
+
+
+.inputSubmit {
+  margin-left: 0;
+  width: 100px;
+  height: 50px;
+  outline: none;
+  background-color: blueviolet;
+  color: white;
+  border: none;
+}
+
+.inputSubmit:hover {
+  background-color: rgb(90, 9, 165);
+}
+
+/* ====== End of Register CSS ====== */
+
+/* ====== Start of Login CSS ====== */
+
+/* This is your CSS code */
+
+/* The green button style */
+.green-button {
+  display: inline-block;
+  /* This makes the link behave like a button */
+  background-color: rgb(0, 180, 81);
+  /* The background color is green */
+  color: white;
+  /* The text color is white */
+  height: 10%;
+  /* The height of the button is 10% */
+  border-radius: 5px;
+  /* The border radius is 5px */
+  border: none;
+  /* There is no border */
+  text-decoration: none;
+  /* This removes the underline from the link */
+  padding: 10px;
+  /* This adds some space around the text */
+  text-align: center;
+  /* This centers the text */
+}
+
+/* The hover effect for the green button */
+.green-button:hover {
+  background-color: rgb(2, 141, 64);
+  /* The background color is darker green */
+}
+
+/* The purple box style */
+.purple-box {
+  background-color: blueviolet;
+  /* The background color is blueviolet */
+  height: 15%;
+  /* The height of the box is 15% */
+  border-radius: 5px;
+  /* The border radius is 5px */
+  align-content: center;
+  /* The content is centered */
+  color: white;
+  /* The text color is white */
+  display: flex;
+  /* Using flex to center the text */
+  justify-content: center;
+  /* Centering text horizontally */
+  align-items: center;
+  /* Centering text vertically */
+  margin-bottom: 10%;
+  margin-top: 10%;
+}
+
+/* The horizontal line style */
+hr {
+  border: 1px solid grey;
+  /* The border is 1px solid grey */
+  width: 100%;
+  /* The width is 100% */
+}
+
+/* The login title style */
+.loginTitle {
+  text-align: center;
+  /* The title is centered */
+}
+
+.buttonLoginContainer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 4%;
+}
+
+.forgetPasswordButton {
+  outline: none;
+  border: none;
+  background-color: white;
+}
+
+.forgetPasswordButton:hover {
+  color: blueviolet;
+}
+
+/* ====== End of Login CSS ====== */
+/* The @media rule is used to apply different styles for different media types/devices. In this case, it's used to apply styles when the viewport is 600 pixels wide or less */
+@media screen and (max-width: 600px) {
+
+  /* When the viewport is 600px or less, the flex items will take up the full width of the container */
+  .div-left,
+  .div-right {
+    flex: 1 0 100%;
+  }
+}

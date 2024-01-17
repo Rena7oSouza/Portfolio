@@ -1,0 +1,34 @@
+<!-- This is your HTML code -->
+
+{% extends "loto/logreglayout.html" %}
+
+<body>
+    {% block body %}
+    <!-- The user prompt -->
+    <p>Você é um novo usuário ? Então clique aqui para cadastrar gratuitamente um login para acessar o sistema.</p>
+    <!-- The green button -->
+    <a class="green-button" href="{% url 'register' %}">Cadastrar acesso</a>
+
+    <!-- The horizontal line -->
+    <hr>
+    <!-- The login title -->
+    <h1 class="loginTitle">Acesso</h1>
+    <!-- The purple box with centered text -->
+    <div class="purple-box">Preencha seus dados de acesso</div>
+    <!-- The login form -->
+    <form action="{% url 'login' %}" method="post">
+        {% csrf_token %}
+        <!-- The login input field -->
+        <input class="inputText" type="text" id="username" name="username" placeholder="Login"><br>
+        <!-- The password input field -->
+        <input class="inputText" type="password" id="password" name="password" placeholder="Senha"><br>
+        <div class="buttonLoginContainer">
+            <!-- The input element with type="button" is used to create a button. -->
+            <input class="forgetPasswordButton" type="button" value="Esqueci a senha">
+            <!-- The input element with type="submit" is used to create a submit button. When the user clicks on the submit button, the form data is sent to the server -->
+            <input class="inputSubmit" type="submit" value="Submit">
+        </div>
+    </form>
+
+    {% endblock %}
+</body>

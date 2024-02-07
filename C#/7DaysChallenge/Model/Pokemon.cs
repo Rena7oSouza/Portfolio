@@ -12,6 +12,12 @@ public class Pokemon
     public int weight {get; set;}
     public List<Abilities> abilities{get;set;}
     public List<PForms> forms{get;set;}
+    public List<GameIndices> game_indices{get;set;}
+    public List<HeldItems> held_items{get;set;}
+    public List<Moves> moves{get;set;}
+    public Species species{get;set;}
+    public List<Types> types{get;set;}
+    public List<Stats> stats{get;set;}
 
     public override string ToString()
     {

@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "sQP1ZhaPVbs66Vzd5nJw22UT5F9BTFPpDfAPYNjwWNXA40+gO6BLjbXwsnYfFaMawXcLUjKFDuRGJR41YbdCAw==",
+  "dgSpecHash": "fOtR0C1FH5vYajNb89IYr2WW9afKgH70LuiuyagrXxQsAkafhIyQNS7vDksGtpDCrwiQpkUzDajSqQyF7YVbRw==",
   "success": true,
   "projectFilePath": "/home/renato-souza/Área de trabalho/Portfolio/C#/7DaysChallenge/7DaysChallenge.csproj",
   "expectedPackageFiles": [
+    "/home/renato-souza/.nuget/packages/newtonsoft.json/13.0.3/newtonsoft.json.13.0.3.nupkg.sha512",
     "/home/renato-souza/.nuget/packages/restsharp/110.2.0/restsharp.110.2.0.nupkg.sha512",
     "/home/renato-souza/.nuget/packages/system.text.encodings.web/7.0.0/system.text.encodings.web.7.0.0.nupkg.sha512",
     "/home/renato-souza/.nuget/packages/system.text.json/7.0.2/system.text.json.7.0.2.nupkg.sha512"

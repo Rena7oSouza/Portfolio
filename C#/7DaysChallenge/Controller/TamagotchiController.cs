@@ -1,19 +1,28 @@
 ﻿using System;
 using RestSharp;
 using System.Text.Json;
+
 class TamagotchiController
 {
     static void Main()
     {
-        var client = new RestClient("https://pokeapi.co/api/v2/pokemon/ditto");
+        TamagotchiView view = new TamagotchiView();
+        view.Title();
+        string name = view.Name();
+    }
+
+    public void RequestPokemon()
+    {
+              var client = new RestClient("https://pokeapi.co/api/v2/pokemon/ditto");
         var request = new RestRequest("", Method.Get);
 
         var response = client.Execute(request);
         if (response.IsSuccessful)
         {
-                Pokemon p = JsonSerializer.Deserialize<Pokemon>(response.Content);
+            Pokemon p = JsonSerializer.Deserialize<Pokemon>(response.Content);
 
-                Console.WriteLine(p);
+            Console.WriteLine(p);
+           
         }
         else
         {

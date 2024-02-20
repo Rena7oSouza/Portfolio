@@ -7,26 +7,87 @@ class TamagotchiController
     static void Main()
     {
         TamagotchiView view = new TamagotchiView();
+        TamagotchiController controller = new TamagotchiController();
         view.Title();
         string name = view.Name();
+        string menuAction = view.Menu(name);
+        controller.MenuOptions(menuAction, view, name);
     }
 
-    public void RequestPokemon()
+    public void MenuOptions(string action, TamagotchiView view, string name)
     {
-              var client = new RestClient("https://pokeapi.co/api/v2/pokemon/ditto");
-        var request = new RestRequest("", Method.Get);
+        switch (action)
+        {
+            case "1":
+                GetOption(view, name);
+                break;
+            case "2":
+                SeeOption();
+                break;
+            case "3":
+                break;
+            default:
+                break;
+        }
+    }
+    void GetOption(TamagotchiView view, string name)
+    {
+        string pokemon = view.GetPokemon(name);
+        switch (pokemon)
+        {
+            case "1":
+                pokemon = "Bulbasaur";
+                break;
+            case "2":
+                pokemon = "Charmander";
+                break;
+            case "3":
+                pokemon = "Squirtle";
+                break;
+            default:
+                break;
+        }
+        PokemonOption(view, name, pokemon);
 
+
+    }
+    void PokemonOption(TamagotchiView view, string name, string pokemon)
+    {
+        string option = view.pokemonMenu(name,pokemon);
+        switch(option)
+        {
+            case "1":
+            Pokemon p = RequestPokemon(pokemon.ToLower());
+            Console.WriteLine(p.name);
+            break;
+            case "2":
+            break;
+            case "3":
+            break;
+            default:
+            break;
+        }
+
+
+    }
+    void SeeOption()
+    { }
+    Pokemon RequestPokemon(string pokemon)
+    {
+        var client = new RestClient($"https://pokeapi.co/api/v2/pokemon/{pokemon}");
+        var request = new RestRequest("", Method.Get);
         var response = client.Execute(request);
         if (response.IsSuccessful)
         {
             Pokemon p = JsonSerializer.Deserialize<Pokemon>(response.Content);
-
-            Console.WriteLine(p);
-           
+            return p;
         }
         else
         {
             Console.WriteLine($"Erro: {response.ErrorMessage}");
+            return null;
         }
+
     }
+
 }

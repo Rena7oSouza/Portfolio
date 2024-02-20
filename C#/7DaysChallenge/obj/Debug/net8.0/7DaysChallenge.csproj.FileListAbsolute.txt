@@ -10,9 +10,10 @@
 /home/renato-souza/Área de trabalho/Portfolio/C#/7DaysChallenge/obj/Debug/net8.0/7DaysChallenge.AssemblyInfo.cs
 /home/renato-souza/Área de trabalho/Portfolio/C#/7DaysChallenge/obj/Debug/net8.0/7DaysChallenge.csproj.CoreCompileInputs.cache
 /home/renato-souza/Área de trabalho/Portfolio/C#/7DaysChallenge/obj/Debug/net8.0/7DaysChallenge.sourcelink.json
-/home/renato-souza/Área de trabalho/Portfolio/C#/7DaysChallenge/obj/Debug/net8.0/7DaysChallenge.csproj.CopyComplete
 /home/renato-souza/Área de trabalho/Portfolio/C#/7DaysChallenge/obj/Debug/net8.0/7DaysChallenge.dll
 /home/renato-souza/Área de trabalho/Portfolio/C#/7DaysChallenge/obj/Debug/net8.0/refint/7DaysChallenge.dll
 /home/renato-souza/Área de trabalho/Portfolio/C#/7DaysChallenge/obj/Debug/net8.0/7DaysChallenge.pdb
 /home/renato-souza/Área de trabalho/Portfolio/C#/7DaysChallenge/obj/Debug/net8.0/7DaysChallenge.genruntimeconfig.cache
 /home/renato-souza/Área de trabalho/Portfolio/C#/7DaysChallenge/obj/Debug/net8.0/ref/7DaysChallenge.dll
+/home/renato-souza/Área de trabalho/Portfolio/C#/7DaysChallenge/bin/Debug/net8.0/Newtonsoft.Json.dll
+/home/renato-souza/Área de trabalho/Portfolio/C#/7DaysChallenge/obj/Debug/net8.0/7DaysCha.5EC60FD4.Up2Date

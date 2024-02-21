@@ -58,11 +58,13 @@ class TamagotchiController
         {
             case "1":
             Pokemon p = RequestPokemon(pokemon.ToLower());
-            Console.WriteLine(p.name);
+            view.PokemonInfo(p);
+            view.pokemonMenu(name, pokemon);
             break;
             case "2":
             break;
             case "3":
+            view.Menu(name);
             break;
             default:
             break;

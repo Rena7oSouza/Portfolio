@@ -10,6 +10,7 @@ public class Pokemon
     public string location_area_encounters {get;set;}
     public int order {get;set;}
     public int weight {get; set;}
+    public int height {get; set;}
     public List<Abilities> abilities{get;set;}
     public List<PForms> forms{get;set;}
     public List<GameIndices> game_indices{get;set;}

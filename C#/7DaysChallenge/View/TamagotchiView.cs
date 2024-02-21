@@ -63,8 +63,8 @@ public class TamagotchiView
     public string pokemonMenu(string name, string pokemonName)
     {
         string answer = "";
-        Console.WriteLine("\n\n------------------------------\n");
-        Console.WriteLine(name + $", what do you want?\n 1 More info about {pokemonName}\n 2 - Catch {pokemonName}\n 3 Back");
+        Console.WriteLine("\n------------------------------\n");
+        Console.WriteLine(name + $", what do you want?\n 1 - More info about {pokemonName}\n 2 - Catch {pokemonName}\n 3 - Back");
         while (answer != "1" && answer != "2" && answer != "3")
         {
             answer = Console.ReadLine().ToString();
@@ -74,6 +74,14 @@ public class TamagotchiView
             }
         }
         return answer;
-
+    }
+    public void PokemonInfo(Pokemon pokemon)
+    {
+        Console.WriteLine("------------------------------");
+        Console.WriteLine(@$"
+        Pokemon: {Char.ToUpper(pokemon.name[0])+ pokemon.name.Substring(1)}
+        Weight: {pokemon.weight}
+        Height: {pokemon.height}
+        Abilities: {string.Join("/", pokemon.abilities.Select(x => x.ability.name)).ToUpper()}");
     }
 }

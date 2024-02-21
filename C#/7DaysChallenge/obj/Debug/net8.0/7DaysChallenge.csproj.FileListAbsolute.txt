@@ -17,3 +17,22 @@
 /home/renato-souza/Área de trabalho/Portfolio/C#/7DaysChallenge/obj/Debug/net8.0/ref/7DaysChallenge.dll
 /home/renato-souza/Área de trabalho/Portfolio/C#/7DaysChallenge/bin/Debug/net8.0/Newtonsoft.Json.dll
 /home/renato-souza/Área de trabalho/Portfolio/C#/7DaysChallenge/obj/Debug/net8.0/7DaysCha.5EC60FD4.Up2Date
+/home/renatosouza/Desktop/Portfolio/C#/7DaysChallenge/bin/Debug/net8.0/7DaysChallenge
+/home/renatosouza/Desktop/Portfolio/C#/7DaysChallenge/bin/Debug/net8.0/7DaysChallenge.deps.json
+/home/renatosouza/Desktop/Portfolio/C#/7DaysChallenge/bin/Debug/net8.0/7DaysChallenge.runtimeconfig.json
+/home/renatosouza/Desktop/Portfolio/C#/7DaysChallenge/bin/Debug/net8.0/7DaysChallenge.dll
+/home/renatosouza/Desktop/Portfolio/C#/7DaysChallenge/bin/Debug/net8.0/7DaysChallenge.pdb
+/home/renatosouza/Desktop/Portfolio/C#/7DaysChallenge/bin/Debug/net8.0/Newtonsoft.Json.dll
+/home/renatosouza/Desktop/Portfolio/C#/7DaysChallenge/bin/Debug/net8.0/RestSharp.dll
+/home/renatosouza/Desktop/Portfolio/C#/7DaysChallenge/obj/Debug/net8.0/7DaysChallenge.csproj.AssemblyReference.cache
+/home/renatosouza/Desktop/Portfolio/C#/7DaysChallenge/obj/Debug/net8.0/7DaysChallenge.GeneratedMSBuildEditorConfig.editorconfig
+/home/renatosouza/Desktop/Portfolio/C#/7DaysChallenge/obj/Debug/net8.0/7DaysChallenge.AssemblyInfoInputs.cache
+/home/renatosouza/Desktop/Portfolio/C#/7DaysChallenge/obj/Debug/net8.0/7DaysChallenge.AssemblyInfo.cs
+/home/renatosouza/Desktop/Portfolio/C#/7DaysChallenge/obj/Debug/net8.0/7DaysChallenge.csproj.CoreCompileInputs.cache
+/home/renatosouza/Desktop/Portfolio/C#/7DaysChallenge/obj/Debug/net8.0/7DaysChallenge.sourcelink.json
+/home/renatosouza/Desktop/Portfolio/C#/7DaysChallenge/obj/Debug/net8.0/7DaysCha.5EC60FD4.Up2Date
+/home/renatosouza/Desktop/Portfolio/C#/7DaysChallenge/obj/Debug/net8.0/7DaysChallenge.dll
+/home/renatosouza/Desktop/Portfolio/C#/7DaysChallenge/obj/Debug/net8.0/refint/7DaysChallenge.dll
+/home/renatosouza/Desktop/Portfolio/C#/7DaysChallenge/obj/Debug/net8.0/7DaysChallenge.pdb
+/home/renatosouza/Desktop/Portfolio/C#/7DaysChallenge/obj/Debug/net8.0/7DaysChallenge.genruntimeconfig.cache
+/home/renatosouza/Desktop/Portfolio/C#/7DaysChallenge/obj/Debug/net8.0/ref/7DaysChallenge.dll

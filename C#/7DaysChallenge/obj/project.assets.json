@@ -235,19 +235,19 @@
     ]
   },
   "packageFolders": {
-    "/home/renato-souza/.nuget/packages/": {}
+    "/home/renatosouza/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/renato-souza/Área de trabalho/Portfolio/C#/7DaysChallenge/7DaysChallenge.csproj",
+      "projectUniqueName": "/home/renatosouza/Desktop/Portfolio/C#/7DaysChallenge/7DaysChallenge.csproj",
       "projectName": "7DaysChallenge",
-      "projectPath": "/home/renato-souza/Área de trabalho/Portfolio/C#/7DaysChallenge/7DaysChallenge.csproj",
-      "packagesPath": "/home/renato-souza/.nuget/packages/",
-      "outputPath": "/home/renato-souza/Área de trabalho/Portfolio/C#/7DaysChallenge/obj/",
+      "projectPath": "/home/renatosouza/Desktop/Portfolio/C#/7DaysChallenge/7DaysChallenge.csproj",
+      "packagesPath": "/home/renatosouza/.nuget/packages/",
+      "outputPath": "/home/renatosouza/Desktop/Portfolio/C#/7DaysChallenge/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/renato-souza/.nuget/NuGet/NuGet.Config"
+        "/home/renatosouza/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
@@ -301,7 +301,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/snap/dotnet-sdk/236/sdk/8.0.200/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.200/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

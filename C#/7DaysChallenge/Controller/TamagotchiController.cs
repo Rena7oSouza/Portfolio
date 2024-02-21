@@ -53,21 +53,20 @@ class TamagotchiController
     }
     void PokemonOption(TamagotchiView view, string name, string pokemon)
     {
-        string option = view.pokemonMenu(name,pokemon);
-        switch(option)
+        string option = view.pokemonMenu(name, pokemon);
+        switch (option)
         {
             case "1":
-            Pokemon p = RequestPokemon(pokemon.ToLower());
-            view.PokemonInfo(p);
-            view.pokemonMenu(name, pokemon);
-            break;
+                Pokemon p = RequestPokemon(pokemon.ToLower());
+                view.PokemonInfo(p);
+                PokemonOption(view, name, pokemon);
+                break;
             case "2":
-            break;
+                break;
             case "3":
-            view.Menu(name);
-            break;
+                break;
             default:
-            break;
+                break;
         }
 
 

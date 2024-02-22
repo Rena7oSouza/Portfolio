@@ -20,6 +20,7 @@ public class Pokemon
     public List<Types> types{get;set;}
     public List<Stats> stats{get;set;}
     public Sprites sprites{get;set;}
+    public Attributes attributes{get;set;}
     public override string ToString()
     {
         return $"Name: {name}\n Id: {id}\n Base Experience: {base_experience}\n Is Default:{ is_default}\n Location Area: {location_area_encounters}\n Order: {order}\n Weight: {weight} ";

@@ -10,8 +10,13 @@ class TamagotchiController
         TamagotchiController controller = new TamagotchiController();
         view.Title();
         string name = view.Name();
+        controller.ShowMenu(view, name);
+    }
+
+    public void ShowMenu(TamagotchiView view, string name)
+    {
         string menuAction = view.Menu(name);
-        controller.MenuOptions(menuAction, view, name);
+        MenuOptions(menuAction, view, name);
     }
 
     public void MenuOptions(string action, TamagotchiView view, string name)
@@ -62,8 +67,10 @@ class TamagotchiController
                 PokemonOption(view, name, pokemon);
                 break;
             case "2":
+            view.Catch(pokemon);
                 break;
             case "3":
+                ShowMenu(view, name);
                 break;
             default:
                 break;

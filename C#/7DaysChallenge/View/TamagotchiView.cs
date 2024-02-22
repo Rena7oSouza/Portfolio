@@ -84,4 +84,9 @@ public class TamagotchiView
         Height: {pokemon.height}
         Abilities: {string.Join("/", pokemon.abilities.Select(x => x.ability.name)).ToUpper()}");
     }
+
+    public void Catch(string pokemon)
+    {
+        Console.WriteLine($"Gotcha! You caught {Char.ToUpper(pokemon[0])+ pokemon.Substring(1)}!");
+    }
 }

@@ -79,7 +79,7 @@ public class TamagotchiView
     {
         Console.WriteLine("------------------------------");
         Console.WriteLine(@$"
-        Pokemon: {Char.ToUpper(pokemon.name[0])+ pokemon.name.Substring(1)}
+        Pokemon: {Char.ToUpper(pokemon.name[0]) + pokemon.name.Substring(1)}
         Weight: {pokemon.weight}
         Height: {pokemon.height}
         Abilities: {string.Join("/", pokemon.abilities.Select(x => x.ability.name)).ToUpper()}");
@@ -87,6 +87,23 @@ public class TamagotchiView
 
     public void Catch(string pokemon)
     {
-        Console.WriteLine($"Gotcha! You caught {Char.ToUpper(pokemon[0])+ pokemon.Substring(1)}!");
+        Console.WriteLine($"Gotcha! You caught {Char.ToUpper(pokemon[0]) + pokemon.Substring(1)}!");
+    }
+
+    public string ShowPokemon(List<Pokemon> p)
+    {
+        Console.WriteLine("\n------------------------------");
+        if (p.Count == 0)
+        {
+            Console.WriteLine("You don't have Pokémon yet!");
+            return "0";
+        }
+        else
+        {
+            for (int i = 0; i < p.Count; i++)
+            {
+                Console.WriteLine($"{i+1} - {p[i].name}");
+            }
+        }
     }
 }

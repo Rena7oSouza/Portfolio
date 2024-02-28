@@ -1,13 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "25k52Wcx5L/0UJN2FdA/N2b8xK5QsKtVXYMbS+gtRgLrvQVTlnRNihGAX2GcZolNpRsH8iZ4krEm0ZxitWr8VA==",
+  "dgSpecHash": "jT6URILxAHHb2FirEWLW7ESwHMFNlYR1W5ytRFKMbESJW1qdrZfQ/z854MJAnwjYXhrJ7BFqxju9RimXSbZPBA==",
   "success": true,
-  "projectFilePath": "/home/renato-souza/Área de trabalho/Portfolio/C#/7DaysChallenge/7DaysChallenge.csproj",
+  "projectFilePath": "/home/renatosouza/Desktop/Portfolio/C#/7DaysChallenge/7DaysChallenge.csproj",
   "expectedPackageFiles": [
-    "/home/renato-souza/.nuget/packages/newtonsoft.json/13.0.3/newtonsoft.json.13.0.3.nupkg.sha512",
-    "/home/renato-souza/.nuget/packages/restsharp/110.2.0/restsharp.110.2.0.nupkg.sha512",
-    "/home/renato-souza/.nuget/packages/system.text.encodings.web/7.0.0/system.text.encodings.web.7.0.0.nupkg.sha512",
-    "/home/renato-souza/.nuget/packages/system.text.json/7.0.2/system.text.json.7.0.2.nupkg.sha512"
+    "/home/renatosouza/.nuget/packages/newtonsoft.json/13.0.3/newtonsoft.json.13.0.3.nupkg.sha512",
+    "/home/renatosouza/.nuget/packages/restsharp/110.2.0/restsharp.110.2.0.nupkg.sha512",
+    "/home/renatosouza/.nuget/packages/system.text.encodings.web/7.0.0/system.text.encodings.web.7.0.0.nupkg.sha512",
+    "/home/renatosouza/.nuget/packages/system.text.json/7.0.2/system.text.json.7.0.2.nupkg.sha512"
   ],
   "logs": []
 }

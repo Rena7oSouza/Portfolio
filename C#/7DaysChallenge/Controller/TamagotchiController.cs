@@ -8,26 +8,27 @@ class TamagotchiController
     {
         TamagotchiView view = new TamagotchiView();
         TamagotchiController controller = new TamagotchiController();
+        List<Pokemon> pokemonList = new List<Pokemon>();
         view.Title();
         string name = view.Name();
-        controller.ShowMenu(view, name);
+        controller.ShowMenu(view, name, pokemonList);
     }
 
-    public void ShowMenu(TamagotchiView view, string name)
+    public void ShowMenu(TamagotchiView view, string name, List<Pokemon> p)
     {
         string menuAction = view.Menu(name);
-        MenuOptions(menuAction, view, name);
+        MenuOptions(menuAction, view, name, p);
     }
 
-    public void MenuOptions(string action, TamagotchiView view, string name)
+    public void MenuOptions(string action, TamagotchiView view, string name, List<Pokemon> p)
     {
         switch (action)
         {
             case "1":
-                GetOption(view, name);
+                GetOption(view, name, p);
                 break;
             case "2":
-                SeeOption();
+                SeeOption(view, p);
                 break;
             case "3":
                 break;
@@ -35,7 +36,7 @@ class TamagotchiController
                 break;
         }
     }
-    void GetOption(TamagotchiView view, string name)
+    void GetOption(TamagotchiView view, string name, List<Pokemon> pkmnList)
     {
         string pokemon = view.GetPokemon(name);
         switch (pokemon)
@@ -52,11 +53,11 @@ class TamagotchiController
             default:
                 break;
         }
-        PokemonOption(view, name, pokemon);
+        PokemonOption(view, name, pokemon, pkmnList);
 
 
     }
-    void PokemonOption(TamagotchiView view, string name, string pokemon)
+    void PokemonOption(TamagotchiView view, string name, string pokemon, List<Pokemon> pkmnList)
     {
         string option = view.pokemonMenu(name, pokemon);
         switch (option)
@@ -64,13 +65,13 @@ class TamagotchiController
             case "1":
                 Pokemon p = RequestPokemon(pokemon.ToLower());
                 view.PokemonInfo(p);
-                PokemonOption(view, name, pokemon);
+                PokemonOption(view, name, pokemon, pkmnList);
                 break;
             case "2":
             view.Catch(pokemon);
                 break;
             case "3":
-                ShowMenu(view, name);
+                ShowMenu(view, name, pkmnList);
                 break;
             default:
                 break;
@@ -78,8 +79,10 @@ class TamagotchiController
 
 
     }
-    void SeeOption()
-    { }
+    void SeeOption(TamagotchiView view, List<Pokemon> p)
+    { 
+       int index =  view.ShowPokemon(p);
+    }
     Pokemon RequestPokemon(string pokemon)
     {
         var client = new RestClient($"https://pokeapi.co/api/v2/pokemon/{pokemon}");

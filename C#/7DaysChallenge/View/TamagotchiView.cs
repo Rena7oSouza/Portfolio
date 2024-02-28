@@ -90,20 +90,46 @@ public class TamagotchiView
         Console.WriteLine($"Gotcha! You caught {Char.ToUpper(pokemon[0]) + pokemon.Substring(1)}!");
     }
 
-    public string ShowPokemon(List<Pokemon> p)
+    public int ShowPokemon(List<Pokemon> p)
     {
         Console.WriteLine("\n------------------------------");
         if (p.Count == 0)
         {
             Console.WriteLine("You don't have Pokémon yet!");
-            return "0";
+            return 0;
         }
         else
         {
-            for (int i = 0; i < p.Count; i++)
+            int numberAnswer=0;
+            bool validAnswer = false;
+
+            while (!validAnswer)
             {
-                Console.WriteLine($"{i+1} - {p[i].name}");
+                Console.WriteLine("Choose your Pokémon:");
+                for (int i = 0; i < p.Count; i++)
+                {
+                    Console.WriteLine($"{i + 1} - {p[i]}");
+                }
+                string answer = Console.ReadLine();
+
+                if (int.TryParse(answer, out numberAnswer))
+                {
+                    if (numberAnswer >= 1 && numberAnswer <= p.Count)
+                    {
+                        validAnswer = true;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Invalid Option! Please select a valid option");
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Invalid Answer! Please insert a valid answer");
+                }
             }
+            Console.WriteLine($"{p[numberAnswer - 1].name}, I choose you!");
+            return numberAnswer-1;
         }
     }
 }

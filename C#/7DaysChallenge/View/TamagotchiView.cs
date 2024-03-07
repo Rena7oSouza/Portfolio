@@ -5,7 +5,8 @@ public class TamagotchiView
 {
     public void Title()
     {
-        Console.WriteLine(@"
+        Console.WriteLine(
+            @"
 
    ___      _                         _____                                  _       _     _ 
   / _ \___ | | ___ __ ___   ___  _ __/__   \__ _ _ __ ___   __ _  __ _  ___ | |_ ___| |__ (_)
@@ -15,8 +16,10 @@ public class TamagotchiView
                                                                  |___/                       
 
 
-");
+"
+        );
     }
+
     public string Name()
     {
         string name = "";
@@ -32,13 +35,17 @@ public class TamagotchiView
     {
         string answer = "";
         Console.WriteLine("\n\n-------------Menu-------------\n");
-        Console.WriteLine(name + ", what do you want?\n 1 - Get a Pokémon\n 2 - See your Pokémon\n 3 - Exit");
+        Console.WriteLine(
+            name + ", what do you want?\n 1 - Get a Pokémon\n 2 - See your Pokémon\n 3 - Exit"
+        );
         while (answer != "1" && answer != "2" && answer != "3")
         {
             answer = Console.ReadLine().ToString();
             if (answer != "1" && answer != "2" && answer != "3")
             {
-                Console.WriteLine("\nInvalid Option! Please select again \n 1 - Get a Pokémon\n 2 - See your Pokémon\n 3 - Exit");
+                Console.WriteLine(
+                    "\nInvalid Option! Please select again \n 1 - Get a Pokémon\n 2 - See your Pokémon\n 3 - Exit"
+                );
             }
         }
         return answer;
@@ -48,41 +55,54 @@ public class TamagotchiView
     {
         string answer = "";
         Console.WriteLine("\n\n---------Get Pokémon----------\n");
-        Console.WriteLine(name + ", which one do you choose?\n 1 - Bulbasaur\n 2 - Charmander\n 3 - Squirtle");
+        Console.WriteLine(
+            name + ", which one do you choose?\n 1 - Bulbasaur\n 2 - Charmander\n 3 - Squirtle"
+        );
 
         while (answer != "1" && answer != "2" && answer != "3")
         {
             answer = Console.ReadLine().ToString();
             if (answer != "1" && answer != "2" && answer != "3")
             {
-                Console.WriteLine("\nInvalid Option! Please select again \n 1 - Bulbasaur\n 2 - Charmander\n 3 - Squirtle");
+                Console.WriteLine(
+                    "\nInvalid Option! Please select again \n 1 - Bulbasaur\n 2 - Charmander\n 3 - Squirtle"
+                );
             }
         }
         return answer;
     }
+
     public string pokemonMenu(string name, string pokemonName)
     {
         string answer = "";
         Console.WriteLine("\n------------------------------\n");
-        Console.WriteLine(name + $", what do you want?\n 1 - More info about {pokemonName}\n 2 - Catch {pokemonName}\n 3 - Back");
+        Console.WriteLine(
+            name
+                + $", what do you want?\n 1 - More info about {pokemonName}\n 2 - Catch {pokemonName}\n 3 - Back"
+        );
         while (answer != "1" && answer != "2" && answer != "3")
         {
             answer = Console.ReadLine().ToString();
             if (answer != "1" && answer != "2" && answer != "3")
             {
-                Console.WriteLine("\nInvalid Option! Please select again \n 1 More info about{pokemonName}\n 2 - Catch {pokemonName}\n 3 Back");
+                Console.WriteLine(
+                    "\nInvalid Option! Please select again \n 1 More info about{pokemonName}\n 2 - Catch {pokemonName}\n 3 Back"
+                );
             }
         }
         return answer;
     }
+
     public void PokemonInfo(Pokemon pokemon)
     {
         Console.WriteLine("------------------------------");
-        Console.WriteLine(@$"
+        Console.WriteLine(
+            @$"
         Pokemon: {Char.ToUpper(pokemon.name[0]) + pokemon.name.Substring(1)}
         Weight: {pokemon.weight}
         Height: {pokemon.height}
-        Abilities: {string.Join("/", pokemon.abilities.Select(x => x.ability.name)).ToUpper()}");
+        Abilities: {string.Join("/", pokemon.abilities.Select(x => x.ability.name)).ToUpper()}"
+        );
     }
 
     public void Catch(string pokemon)
@@ -100,7 +120,7 @@ public class TamagotchiView
         }
         else
         {
-            int numberAnswer=0;
+            int numberAnswer = 0;
             bool validAnswer = false;
 
             while (!validAnswer)
@@ -108,7 +128,9 @@ public class TamagotchiView
                 Console.WriteLine("Choose your Pokémon:");
                 for (int i = 0; i < p.Count; i++)
                 {
-                    Console.WriteLine($"{i + 1} - {p[i]}");
+                    Console.WriteLine(
+                        $"{i + 1} - {Char.ToUpper(p[i].name[0]) + p[i].name.Substring(1)}"
+                    );
                 }
                 string answer = Console.ReadLine();
 
@@ -128,8 +150,10 @@ public class TamagotchiView
                     Console.WriteLine("Invalid Answer! Please insert a valid answer");
                 }
             }
-            Console.WriteLine($"{p[numberAnswer - 1].name}, I choose you!");
-            return numberAnswer-1;
+            Console.WriteLine(
+                $"{Char.ToUpper(p[numberAnswer - 1].name[0]) + p[numberAnswer - 1].name.Substring(1)}, I choose you!"
+            );
+            return numberAnswer - 1;
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿using System;
-using RestSharp;
 using System.Text.Json;
+using RestSharp;
 
 class TamagotchiController
 {
@@ -36,6 +36,7 @@ class TamagotchiController
                 break;
         }
     }
+
     void GetOption(TamagotchiView view, string name, List<Pokemon> pkmnList)
     {
         string pokemon = view.GetPokemon(name);
@@ -54,21 +55,21 @@ class TamagotchiController
                 break;
         }
         PokemonOption(view, name, pokemon, pkmnList);
-
-
     }
+
     void PokemonOption(TamagotchiView view, string name, string pokemon, List<Pokemon> pkmnList)
     {
         string option = view.pokemonMenu(name, pokemon);
+        Pokemon p = RequestPokemon(pokemon.ToLower());
         switch (option)
         {
             case "1":
-                Pokemon p = RequestPokemon(pokemon.ToLower());
                 view.PokemonInfo(p);
                 PokemonOption(view, name, pokemon, pkmnList);
                 break;
             case "2":
-            view.Catch(pokemon);
+                CatchBehaviour(view, p, pkmnList);
+
                 break;
             case "3":
                 ShowMenu(view, name, pkmnList);
@@ -76,13 +77,24 @@ class TamagotchiController
             default:
                 break;
         }
-
-
     }
+
     void SeeOption(TamagotchiView view, List<Pokemon> p)
-    { 
-       int index =  view.ShowPokemon(p);
+    {
+        int index = view.ShowPokemon(p);
     }
+
+    void CatchBehaviour(TamagotchiView view, Pokemon p, List<Pokemon> pkmnList)
+    {
+        if (pkmnList.Exists(pk => pk.id == p.id)) { }
+        else
+        {
+            view.Catch(p.name);
+            pkmnList.Add(p);
+            ShowMenu(view, p.name, pkmnList);
+        }
+    }
+
     Pokemon RequestPokemon(string pokemon)
     {
         var client = new RestClient($"https://pokeapi.co/api/v2/pokemon/{pokemon}");
@@ -98,7 +110,5 @@ class TamagotchiController
             Console.WriteLine($"Erro: {response.ErrorMessage}");
             return null;
         }
-
     }
-
 }

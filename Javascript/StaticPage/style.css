@@ -13,8 +13,19 @@ body {
   height: 100vh;
 }
 
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
 .text {
   text-transform: uppercase;
+}
+
+.menu-open #main-content {
+  margin-left: 300px; /* Largura do menu quando aberto */
 }
 
 .my-foto {
@@ -51,8 +62,8 @@ body {
 .nav-green {
   background-color: rgb(94, 255, 0);
   width: 60%;
-  max-width: 480px;
-  min-width: 320px;
+  max-width: 320px;
+  min-width: 160px;
   transition-delay: 0.6s;
 }
 
@@ -120,17 +131,40 @@ body {
   padding-left: 20px;
 }
 
-.cursor {
-  display: inline-block;
-  width: 8px;
-  height: 1em;
-  background-color: black;
+#text::after {
+  content: '|';
   animation: blink 1s infinite;
-  visibility: hidden;
 }
 
 @keyframes blink {
-  50% {
+  0% {
     opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+
+@media only screen and (max-width: 600px) {
+  .content {
+    padding: 20px; 
+  }
+  
+  .nav-white {
+    padding: 20px;
+  }
+
+  .close-btn {
+    top: 20px;
+    right: 20px;
+  }
+  .menu-open #main-content {
+    margin-left: 0; /* Remover margem quando o menu estiver aberto em telas pequenas */
   }
 }

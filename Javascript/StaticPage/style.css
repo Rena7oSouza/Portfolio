@@ -20,6 +20,10 @@ body {
   height: 100vh;
 }
 
+.section {
+  display: none;
+}
+
 .text {
   text-transform: uppercase;
 }

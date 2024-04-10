@@ -21,6 +21,7 @@ const menuItems = document.querySelectorAll('.list li a');
 const sections = document.querySelectorAll('.section');
 
 // Mapeamento entre o texto do item do menu e o ID da seção
+
 const idMap = {
     'About Me': 'about',
     'Skills': 'skills',
@@ -47,6 +48,12 @@ function changeContent(e) {
         contentElement.style.display = 'block';
     }
 }
+
+// Adiciona o evento de clique a cada item do menu
+menuItems.forEach(item => {
+    item.addEventListener('click', changeContent);
+});
+
 
 // Adiciona o evento de clique a cada item do menu
 menuItems.forEach(item => {

@@ -14,6 +14,47 @@ close_btn.addEventListener('click', () => {
 });
 
 
+// Seleciona todos os itens do menu
+const menuItems = document.querySelectorAll('.list li a');
+
+// Seleciona todas as seções
+const sections = document.querySelectorAll('.section');
+
+// Mapeamento entre o texto do item do menu e o ID da seção
+const idMap = {
+    'About Me': 'about',
+    'Skills': 'skills',
+    'Graduations': 'graduations',
+    'Projects': 'projects',
+    'HTML/CSS': 'html-css',
+    'Python': 'python',
+    'Javascript': 'javascript',
+    'Unity': 'unity',
+    'Contact Me': 'contact'
+};
+
+// Função para alterar o conteúdo
+function changeContent(e) {
+    e.preventDefault();
+    const contentId = idMap[this.textContent];
+    const contentElement = document.getElementById(contentId);
+    if (contentElement) {
+        // Esconde todas as seções
+        sections.forEach(section => {
+            section.style.display = 'none';
+        });
+        // Mostra a seção correspondente
+        contentElement.style.display = 'block';
+    }
+}
+
+// Adiciona o evento de clique a cada item do menu
+menuItems.forEach(item => {
+    item.addEventListener('click', changeContent);
+});
+
+
+
 
 let titles = ['Hello, I\'m Renato Souza', 'Welcome to my portfolio!'];
 let i = 0;

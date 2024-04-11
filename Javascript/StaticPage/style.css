@@ -5,32 +5,28 @@
 }
 
 body {
-  font-family: 'Muli', sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   height: 100vh;
-}
-
-.content {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+  margin: 0;
+  padding: 0;
 }
 
 .section {
   display: none;
 }
 
-.text {
-  text-transform: uppercase;
+#main-content.menu-closing {
+  transition: margin-left 0.3s ease-in-out 0.6s;
 }
 
+
 .menu-open #main-content {
-  margin-left: 300px; /* Largura do menu quando aberto */
+  margin-left: 22%;
+  transition: margin-left 0.3s ease-in-out;
 }
+
 
 .my-foto {
   width: 200px;
@@ -57,6 +53,7 @@ body {
   height: 100vh;
   transform: translateX(-100%);
   transition: transform 0.3s ease-in-out;
+  z-index: 1000;
 }
 
 .nav.visible {
@@ -156,10 +153,6 @@ body {
 
 
 @media only screen and (max-width: 600px) {
-  .content {
-    padding: 20px; 
-  }
-  
   .nav-white {
     padding: 20px;
   }
@@ -168,7 +161,8 @@ body {
     top: 20px;
     right: 20px;
   }
+
   .menu-open #main-content {
-    margin-left: 0; /* Remover margem quando o menu estiver aberto em telas pequenas */
+    margin-left: 0;
   }
 }

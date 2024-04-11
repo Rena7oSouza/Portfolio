@@ -1,17 +1,23 @@
-const open_btn = document.querySelector('.open-btn')
-const close_btn = document.querySelector('.close-btn')
-const nav = document.querySelectorAll('.nav')
+const open_btn = document.querySelector('.open-btn');
+const close_btn = document.querySelector('.close-btn');
+const nav = document.querySelectorAll('.nav');
 const mainContent = document.getElementById('main-content');
 
 open_btn.addEventListener('click', () => {
     nav.forEach(nav_el => nav_el.classList.add('visible'));
-    mainContent.classList.add('menu-open');
+    document.body.classList.add('menu-open'); // Adiciona a classe ao corpo
 });
 
 close_btn.addEventListener('click', () => {
     nav.forEach(nav_el => nav_el.classList.remove('visible'));
-    mainContent.classList.remove('menu-open');
+    document.body.classList.remove('menu-open'); // Remove a classe do corpo
+    mainContent.classList.add('menu-closing'); // Adiciona a classe quando o menu começa a fechar
 });
+
+mainContent.addEventListener('transitionend', function() {
+  mainContent.classList.remove('menu-closing'); // Remove a classe quando a transição terminar
+});
+
 
 
 // Seleciona todos os itens do menu

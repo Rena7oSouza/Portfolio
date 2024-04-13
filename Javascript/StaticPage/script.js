@@ -1,33 +1,13 @@
+// Select DOM elements
 const open_btn = document.querySelector('.open-btn');
 const close_btn = document.querySelector('.close-btn');
 const nav = document.querySelectorAll('.nav');
 const mainContent = document.getElementById('main-content');
-
-open_btn.addEventListener('click', () => {
-    nav.forEach(nav_el => nav_el.classList.add('visible'));
-    document.body.classList.add('menu-open'); // Adiciona a classe ao corpo
-});
-
-close_btn.addEventListener('click', () => {
-    nav.forEach(nav_el => nav_el.classList.remove('visible'));
-    document.body.classList.remove('menu-open'); // Remove a classe do corpo
-    mainContent.classList.add('menu-closing'); // Adiciona a classe quando o menu começa a fechar
-});
-
-mainContent.addEventListener('transitionend', function() {
-  mainContent.classList.remove('menu-closing'); // Remove a classe quando a transição terminar
-});
-
-
-
-// Seleciona todos os itens do menu
 const menuItems = document.querySelectorAll('.list li a');
-
-// Seleciona todas as seções
 const sections = document.querySelectorAll('.section');
+const projectList = document.getElementById("projectList");
 
-// Mapeamento entre o texto do item do menu e o ID da seção
-
+// Mapping between the text of the menu item and the section ID
 const idMap = {
     'About Me': 'about',
     'Skills': 'skills',
@@ -40,39 +20,69 @@ const idMap = {
     'Contact Me': 'contact'
 };
 
-// Função para alterar o conteúdo
+// Function to change the content
 function changeContent(e) {
     e.preventDefault();
     const contentId = idMap[this.textContent];
     const contentElement = document.getElementById(contentId);
     if (contentElement) {
-        // Esconde todas as seções
+        // Hide all sections
         sections.forEach(section => {
             section.style.display = 'none';
         });
-        // Mostra a seção correspondente
+        // Show the corresponding section
         contentElement.style.display = 'block';
     }
 }
 
-// Adiciona o evento de clique a cada item do menu
+// Function to handle project click
+function handleProjectClick() {
+    if (projectList.style.display === "none") {
+        projectList.style.display = "block";
+    } else {
+        projectList.style.display = "none";
+    }
+
+    if (projectList.style.maxHeight){
+        projectList.style.maxHeight = null;
+    } else {
+        projectList.style.maxHeight = projectList.scrollHeight + "px";
+    } 
+}
+
+
+// Add click event to each menu item
 menuItems.forEach(item => {
     item.addEventListener('click', changeContent);
 });
 
+// Add click event to project
+document.getElementById("projects").addEventListener("click", handleProjectClick);
 
-// Adiciona o evento de clique a cada item do menu
-menuItems.forEach(item => {
-    item.addEventListener('click', changeContent);
+// Function to handle menu opening
+open_btn.addEventListener('click', () => {
+    nav.forEach(nav_el => nav_el.classList.add('visible'));
+    document.body.classList.add('menu-open'); // Add class to body
 });
 
+// Function to handle menu closing
+close_btn.addEventListener('click', () => {
+    nav.forEach(nav_el => nav_el.classList.remove('visible'));
+    document.body.classList.remove('menu-open'); // Remove class from body
+    mainContent.classList.add('menu-closing'); // Add class when menu starts to close
+});
 
+// Function to handle end of transition
+mainContent.addEventListener('transitionend', function() {
+  mainContent.classList.remove('menu-closing'); // Remove class when transition ends
+});
 
-
+// Titles for typing function
 let titles = ['Hello, I\'m Renato Souza', 'Welcome to my portfolio!'];
 let i = 0;
 let titleIndex = 0;
 
+// Typing function
 function typeWriter() {
     if (i < titles[titleIndex].length) {
         document.getElementById('text').innerHTML += titles[titleIndex].charAt(i);
@@ -93,8 +103,5 @@ function typeWriter() {
     }
 }
 
+// Start typing function after a delay
 setTimeout(typeWriter, 4000);
-
-
-
-

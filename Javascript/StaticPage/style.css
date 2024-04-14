@@ -137,21 +137,22 @@
 }
 
 #projectList,
-#projectList ul {
+#projectList ul,.certifications-list, .certifications-list ul{
   margin: 0;
   padding: 0;
 }
 
-#projectList li {
+#projectList li, .certifications-list li {
   margin: 20px 0;
   padding-left: 20px;
 }
 
-#projectList li:first-child {
+#projectList li:first-child, .certifications-list li:first-child  {
   margin-top: 0;
 }
 
-#projectList li:last-child {
+#projectList li:last-child, .certifications-list li:last-child {
+
   margin-bottom: 0;
 }
 
@@ -184,6 +185,10 @@
   margin: 2%;
 }
 
+#contact img{
+  margin-right: 1%;
+}
+
 /* Project List Styles */
 #projectList {
   max-height: 0;
@@ -191,8 +196,11 @@
   transition: max-height 0.2s ease-out;
 }
 
-#projectList.open {
-  max-height: 200px;
+/* Certtification List Styles */
+#certificationsList {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
 }
 
 /* Animation */

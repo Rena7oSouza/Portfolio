@@ -8,7 +8,7 @@
     integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
     crossorigin="anonymous" />
   <link rel="stylesheet" href="style.css" />
-  <title>My Page</title>
+  <title>Renato Souza's Portfolio</title>
 </head>
 
 <body>
@@ -28,9 +28,16 @@
           <ul class="list">
             <li><a href="#">About Me</a></li>
             <li><a href="#">Skills</a></li>
-            <li><a href="#">Graduations</a></li>
+            <li><a href="#" id="certifications">CERTIFICATIONS</a></li>
+            <li id="certificationsList" class="certifications-list" style="display: none;">
+              <ul>
+                <li><a href="#">Graduations</a></li>
+                <li><a href="#">Courses</a></li>
+              </ul>
+            </li>
+            
             <li><a href="#" id="projects">PROJECTS</a></li>
-            <li id="projectList" style="display: none;">
+            <li id="projectList" class="project-list" style="display: none;">
               <ul>
                 <li><a href="#">HTML/CSS</a></li>
                 <li><a href="#">Python</a></li>
@@ -115,9 +122,9 @@
       <h2>Graduations</h2>
       <p>This is graduations section content.</p>
     </div>
-    <div id="projects" class="section">
-      <h2>Projects</h2>
-      <p>This is projects section content.</p>
+    <div id="courses" class="section">
+      <h2>Courses</h2>
+      <p>This is Courses section content.</p>
     </div>
     <div id="html-css" class="section">
       <h2>HTML/CSS</h2>

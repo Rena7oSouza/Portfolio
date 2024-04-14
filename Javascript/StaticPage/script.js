@@ -12,7 +12,7 @@ const idMap = {
     'About Me': 'about',
     'Skills': 'skills',
     'Graduations': 'graduations',
-    'Projects': 'projects',
+    'Courses': 'courses',
     'HTML/CSS': 'html-css',
     'Python': 'python',
     'Javascript': 'javascript',
@@ -50,6 +50,22 @@ function handleProjectClick() {
     } 
 }
 
+// Function to handle certifications click
+function handleCertificationsClick() {
+    if (certificationsList.style.display === "none") {
+        certificationsList.style.display = "block";
+    } else {
+        certificationsList.style.display = "none";
+    }
+
+    if (certificationsList.style.maxHeight){
+        certificationsList.style.maxHeight = null;
+    } else {
+        certificationsList.style.maxHeight = certificationsList.scrollHeight + "px";
+    } 
+}
+
+
 
 // Add click event to each menu item
 menuItems.forEach(item => {
@@ -58,6 +74,9 @@ menuItems.forEach(item => {
 
 // Add click event to project
 document.getElementById("projects").addEventListener("click", handleProjectClick);
+
+document.getElementById("certifications").addEventListener("click", handleCertificationsClick);
+
 
 // Function to handle menu opening
 open_btn.addEventListener('click', () => {

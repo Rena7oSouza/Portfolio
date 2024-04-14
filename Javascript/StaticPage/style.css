@@ -22,6 +22,9 @@ body {
   border: 3px solid blue;
   border-radius: 10px;
 }
+#about {
+  display: block;
+}
 
 /* Main Content Styles */
 #main-content.menu-closing {

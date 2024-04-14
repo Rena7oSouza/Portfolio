@@ -101,6 +101,7 @@ let titles = ['Hello, I\'m Renato Souza', 'Welcome to my portfolio!'];
 let i = 0;
 let titleIndex = 0;
 
+let isFirstRun = true;
 // Typing function
 function typeWriter() {
     if (i < titles[titleIndex].length) {
@@ -121,6 +122,10 @@ function typeWriter() {
         }, 3000);
     }
 }
+if (isFirstRun) {
+    typeWriter();
+    isFirstRun = false;
+} else {
+    setTimeout(typeWriter, 4000);
+}
 
-// Start typing function after a delay
-setTimeout(typeWriter, 4000);

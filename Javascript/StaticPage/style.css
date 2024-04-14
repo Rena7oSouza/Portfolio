@@ -5,6 +5,15 @@
   box-sizing: border-box;
 }
 
+body {
+  background: url('templates/background.jpg') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+
 /* Section Styles */
 .section {
   display: none;
@@ -249,7 +258,7 @@
   min-height: 390px;
 }
 
-.card{
+.card {
   border: blue solid 2px !important;
 }
 

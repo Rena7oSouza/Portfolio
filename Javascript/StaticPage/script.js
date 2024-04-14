@@ -1,7 +1,7 @@
 // Select DOM elements
 const open_btn = document.querySelector('.open-btn');
 const close_btn = document.querySelector('.close-btn');
-const nav = document.querySelectorAll('.nav');
+const nav = document.querySelectorAll('.my-nav');
 const mainContent = document.getElementById('main-content');
 const menuItems = document.querySelectorAll('.list li a');
 const sections = document.querySelectorAll('.section');

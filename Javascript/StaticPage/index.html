@@ -4,22 +4,25 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
     integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
     crossorigin="anonymous" />
-  <link rel="stylesheet" href="style.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
   <title>Renato Souza's Portfolio</title>
 </head>
 
 <body>
-  <button class="nav-btn open-btn">
+  <button class="my-nav-btn open-btn">
     <i class="fas fa-bars"></i>
   </button>
-  <div class="nav nav-green">
-    <div class="nav nav-yellow">
-      <div class="nav nav-blue">
-        <div class="nav nav-white">
-          <button class="nav-btn close-btn">
+  <div class="my-nav my-nav-green">
+    <div class="my-nav my-nav-yellow">
+      <div class="my-nav my-nav-blue">
+        <div class="my-nav my-nav-white">
+          <button class="my-nav-btn close-btn">
             <i class="fas fa-times"></i>
           </button>
 
@@ -35,7 +38,7 @@
                 <li><a href="#">Courses</a></li>
               </ul>
             </li>
-            
+
             <li><a href="#" id="projects">PROJECTS</a></li>
             <li id="projectList" class="project-list" style="display: none;">
               <ul>
@@ -68,6 +71,7 @@
     </div>
     <div id="skills" class="section">
       <h2>Skills</h2>
+      <br>
       <div>
         <h3 class="content-subtitle">SO</h3>
         <div class="my-line"></div>
@@ -120,27 +124,428 @@
     </div>
     <div id="graduations" class="section">
       <h2>Graduations</h2>
-      <p>This is graduations section content.</p>
+      <br>
+      <h3 class="content-subtitle">Completed</h3>
+      <div class="my-line"></div>
+      <div class="row row-cols-1 row-cols-md-2 g-4">
+        <div class="col">
+          <div class="card mb-3" style="max-width: 540px;">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="templates/facens.jpg" class="img-fluid rounded-start certifications-img" alt="...">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h3 class="card-title">Digital Game Design</h3>
+                  <h4 class="card-text">Technologist in Digital Game Design by FACENS</h4>
+                  <h5 class="card-text text-body-secondary">2015 - 2017</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card mb-3" style="max-width: 540px;">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="templates/anhanguera.jpg" class="img-fluid rounded-start certifications-img" alt="...">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h3 class="card-title">Physical Education</h3>
+                  <h4 class="card-text">Physical Education Degree by Anhanguera College</h4>
+                  <h5 class="card-text text-body-secondary">2010 - 2013</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br>
+      <h3 class="content-subtitle">Studying</h3>
+      <div class="my-line"></div>
+      <div class="row row-cols-1 row-cols-md-2 g-4">
+        <div class="col">
+          <div class="card mb-3" style="max-width: 540px;">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="templates/anhanguera.jpg" class="img-fluid rounded-start certifications-img" alt="...">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h3 class="card-title">Administration</h3>
+                  <h4 class="card-text">Graduation in Administration by Anhanguera College</h4>
+                  <h5 class="card-text text-body-secondary">2023-2026</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card mb-3" style="max-width: 540px;">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="templates/anhanguera.jpg" class="img-fluid rounded-start certifications-img" alt="...">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h3 class="card-title">DevOps</h3>
+                  <h4 class="card-text">Postgraduate in DevOps by Anhanguera College</h4>
+                  <h5 class="card-text text-body-secondary">2023 - 2024</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card mb-3" style="max-width: 540px;">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="templates/anhanguera.jpg" class="img-fluid rounded-start certifications-img" alt="...">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h3 class="card-title">Software Engineering</h3>
+                  <h4 class="card-text">Postgraduate in Software Engineering by Anhanguera College</h4>
+                  <h5 class="card-text text-body-secondary">2024</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <div id="courses" class="section">
       <h2>Courses</h2>
-      <p>This is Courses section content.</p>
+      <br>
+      <h3 class="content-subtitle">Completed</h3>
+      <div class="my-line"></div>
+      <div class="row row-cols-1 row-cols-md-2 g-4">
+        <div class="col">
+          <div class="card mb-3" style="max-width: 540px;">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="templates/edx.png" class="img-fluid rounded-start certifications-img" alt="...">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h3 class="card-title">Python</h3>
+                  <h5 class="card-text">Introduction to Programming in Python by EDX Harvard</h5>
+                  <h5 class="card-text text-body-secondary">2023</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card mb-3" style="max-width: 540px;">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="templates/anhanguera.jpg" class="img-fluid rounded-start certifications-img" alt="...">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h3 class="card-title">Python</h3>
+                  <h4 class="card-text">Introduction to Python Language by Anhanguera</h4>
+                  <h5 class="card-text text-body-secondary">2023</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card mb-3" style="max-width: 540px;">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="templates/anhanguera.jpg" class="img-fluid rounded-start certifications-img" alt="...">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h3 class="card-title">Python</h3>
+                  <h4 class="card-text">Introduction to Data Analysis with Python by Anhanguera</h4>
+                  <h5 class="card-text text-body-secondary">2023</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card mb-3" style="max-width: 540px;">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="templates/anhanguera.jpg" class="img-fluid rounded-start certifications-img" alt="...">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h3 class="card-title">Python</h3>
+                  <h4 class="card-text">Data Structures in Python by Anhanguera</h4>
+                  <h5 class="card-text text-body-secondary">2023</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card mb-3" style="max-width: 540px;">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="templates/senac.png" class="img-fluid rounded-start certifications-img" alt="...">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h3 class="card-title">IT</h3>
+                  <h4 class="card-text">Information Technology Technical Course by SENAC</h4>
+                  <h5 class="card-text text-body-secondary">2015</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card mb-3" style="max-width: 540px;">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="templates/microcamp.png" class="img-fluid rounded-start certifications-img" alt="...">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h3 class="card-title">IT</h3>
+                  <h4 class="card-text">Information Technology by Microcamp</h4>
+                  <h5 class="card-text text-body-secondary">2014</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card mb-3" style="max-width: 540px;">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="templates/pitagoras.png" class="img-fluid rounded-start certifications-img" alt="...">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h3 class="card-title">Excel</h3>
+                  <h4 class="card-text">Advanced Excel by Pitágoras College</h4>
+                  <h5 class="card-text text-body-secondary">2013</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card mb-3" style="max-width: 540px;">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="templates/senai.png" class="img-fluid rounded-start certifications-img" alt="...">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h4 class="card-title">Assembly and Maintenance</h4>
+                  <h5 class="card-text">Assembly and Maintenance of Computers by SENAI</h5>
+                  <h5 class="card-text text-body-secondary">2011</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br>
+      <h3 class="content-subtitle">Coursing</h3>
+      <div class="my-line"></div>
+      <div class="row row-cols-1 row-cols-md-2 g-4">
+        <div class="col">
+          <div class="card mb-3" style="max-width: 540px;">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="templates/edx.png" class="img-fluid rounded-start certifications-img" alt="...">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h3 class="card-title">Django</h3>
+                  <h5 class="card-text">Web Programming with Python and JavaScript by EDX Harvard</h5>
+                  <h5 class="card-text text-body-secondary">2023</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <div id="html-css" class="section">
       <h2>HTML/CSS</h2>
-      <p>This is HTML/CSS section content.</p>
+      <br>
+      <div class="card-group">
+        <div class="col-lg-4 col-md-8 mb-4">
+          <div class="card m-3 " >
+            <div class="responsive-iframe">
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/5OgPzWyMAMY?si=dlmVNV2P8gU5f0CR"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+            </div>
+            <div class="card-body" id="projects-card-body">
+              <h5 class="card-title"><strong>Search</strong></h5>
+              <p class="card-text">This project is a search page, with a style similar to Google’s, where when you
+                search it redirects directly to Google. It also has features to search for images and advanced search.
+              </p>
+              <p><strong>This project uses:</strong></p>
+              <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white"
+                alt="Tag 1">
+              <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white"
+                alt="Tag 2">
+            </div>
+            <div class="card-footer">
+              <a href="https://github.com/Rena7oSouza/Portfolio/tree/main/HTMLCSS/search" target="_blank"
+                rel="noopener noreferrer">
+                <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"
+                  alt="Click Me!" style="cursor: pointer;">
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <div id="python" class="section">
       <h2>Python</h2>
-      <p>This is Python section content.</p>
+      <br>
+      <div class="card-group">
+        <div class="col-lg-3 col-md-6 mb-4">
+          <div class="card m-3 " >
+            <div class="responsive-iframe">
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/fcRdhgsVqMA?si=d6_zmxRD0kGqS9j4"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+            </div>
+            <div class="card-body" id="projects-card-body">
+              <h5 class="card-title"><strong>Wiki</strong></h5>
+              <p class="card-text">This project is a search page, with a style similar to Google’s, where when you
+                search it redirects directly to Google. It also has features to search for images and advanced search.
+              </p>
+              <p><strong>This project uses:</strong></p>
+              <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white"
+                alt="Tag 1">
+              <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white"
+                alt="Tag 2">
+              <img src="https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=white"
+                alt="Tag 3">
+            </div>
+            <div class="card-footer">
+              <a href="https://github.com/Rena7oSouza/Portfolio/tree/main/Django/wiki" target="_blank"
+                rel="noopener noreferrer">
+                <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"
+                  alt="Click Me!" style="cursor: pointer;">
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-4">
+          <div class="card m-3 ">
+            <div class="responsive-iframe">
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/NBmo1AAIqCY?si=OC95u_8p9Seom9RE"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+            </div>
+            <div class="card-body" id="projects-card-body">
+              <h5 class="card-title"><strong>Commerce</strong></h5>
+              <p class="card-text">This project is a web commerce focused on auctions where users can advertise their
+                laptops and other users can bid on them, until the advertiser closes the auction. It is also possible
+                to write comments on the advertised items.
+              </p>
+              <p><strong>This project uses:</strong></p>
+              <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white"
+                alt="Tag 1">
+              <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white"
+                alt="Tag 2">
+              <img src="https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=white"
+                alt="Tag 3">
+            </div>
+            <div class="card-footer">
+              <a href="https://github.com/Rena7oSouza/Portfolio/tree/main/Django/commerce" target="_blank"
+                rel="noopener noreferrer">
+                <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"
+                  alt="Click Me!" style="cursor: pointer;">
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-4">
+          <div class="card m-3 ">
+            <div class="responsive-iframe">
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/T02828OoS38?si=4gkAM3CQMVfu1KPg"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+            </div>
+            <div class="card-body" id="projects-card-body">
+              <h5 class="card-title"><strong>Mail</strong></h5>
+              <p class="card-text">A webapp where users are created for email, they can send and receive emails, reply
+                and archive them.
+              </p>
+              <p><strong>This project uses:</strong></p>
+              <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white"
+                alt="Tag 1">
+              <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white"
+                alt="Tag 2">
+              <img
+                src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"
+                alt="Tag 3">
+              <img src="https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=white"
+                alt="Tag 4">
+            </div>
+            <div class="card-footer">
+              <a href="https://github.com/Rena7oSouza/Portfolio/tree/main/Django/mail" target="_blank"
+                rel="noopener noreferrer">
+                <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"
+                  alt="Click Me!" style="cursor: pointer;">
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-4">
+          <div class="card m-3 ">
+            <div class="responsive-iframe">
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/SxVve244qYw?si=f11ufdmbUk4dd343"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+            </div>
+            <div class="card-body" id="projects-card-body">
+              <h5 class="card-title"><strong>Network</strong></h5>
+              <p class="card-text">A social network where people can post, edit their posted comments, follow other
+                users, and like other people’s posts.
+              </p>
+              <p><strong>This project uses:</strong></p>
+              <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white"
+                alt="Tag 1">
+              <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white"
+                alt="Tag 2">
+              <img
+                src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"
+                alt="Tag 3">
+              <img src="https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=white"
+                alt="Tag 4">
+            </div>
+            <div class="card-footer">
+              <a href="https://github.com/Rena7oSouza/Portfolio/tree/main/Django/network" target="_blank"
+                rel="noopener noreferrer">
+                <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"
+                  alt="Click Me!" style="cursor: pointer;">
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <div id="javascript" class="section">
       <h2>Javascript</h2>
-      <p>This is Javascript section content.</p>
+      <p>This area is still under construction! As soon as possible, we will have projects here.</p>
     </div>
     <div id="unity" class="section">
       <h2>Unity</h2>
-      <p>This is Unity section content.</p>
+      <p>This area is still under construction! As soon as possible, we will have projects here.</p>
     </div>
     <div id="contact" class="section">
       <h2>Contact Me</h2>

@@ -1,5 +1,0 @@
-/home/renato-souza/Área de trabalho/Portfolio/C#/7DaysChallenge/bin/Release/net8.0/publish/7DaysChallenge
-/home/renato-souza/Área de trabalho/Portfolio/C#/7DaysChallenge/bin/Release/net8.0/publish/7DaysChallenge.dll
-/home/renato-souza/Área de trabalho/Portfolio/C#/7DaysChallenge/bin/Release/net8.0/publish/7DaysChallenge.deps.json
-/home/renato-souza/Área de trabalho/Portfolio/C#/7DaysChallenge/bin/Release/net8.0/publish/7DaysChallenge.runtimeconfig.json
-/home/renato-souza/Área de trabalho/Portfolio/C#/7DaysChallenge/bin/Release/net8.0/publish/7DaysChallenge.pdb

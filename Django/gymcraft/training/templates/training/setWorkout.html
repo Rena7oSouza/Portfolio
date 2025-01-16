@@ -1,0 +1,196 @@
+{% extends "training/layout.html" %}
+
+{% block body %}
+<div id="exercise-panel" class="offcanvas">
+    <div class="offcanvas-content">
+        <button type="button" class="btn-close" onclick="closeExercisePanel()">&times;</button>
+        <h2 id="exercise-title"></h2>
+        <div id="youtube-video"></div>
+    </div>
+</div>
+
+<div id="overlay" class="overlay"></div>
+<main>
+    <form id="training-form" method="POST" action="{% url 'setWorkout' %}">
+        {% csrf_token %}
+        <h3 class="section-title">Day of Week:</h3><br>
+        <div class="days-container d-flex flex-wrap">
+            {% for day in days_of_week %}
+            <input type="button" class="mb-1 btn-days {% if day.1 == 'Monday' %}selected{% endif %}" value="{{ day.1 }}"
+                onclick="selectDay('{{ day.1 }}')">
+            {% endfor %}
+        </div>
+        <br>
+        <h3 for="muscle_group" class="section-title">Muscle Group:</h3>
+        <div class="muscle-group-container">
+            <div class="row gx-0 gy-0 row-cols-2 row-cols-sm-2 row-cols-md-4 d-flex">
+                <div class="col mb-1">
+                    <div class="card muscle-group-card text-bg-dark selected" onclick="selectMuscleGroup('all')">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2b/Hantel.jpg" class="card-img" alt="All Muscle Groups">
+                        <div class="card-img-overlay">
+                            <h5 class="card-title">All</h5>
+                        </div>
+                    </div>
+                </div>
+                {% for muscle_group in muscle_groups %}
+                <div class="col mb-1">
+                    <div class="card muscle-group-card text-bg-dark"
+                        onclick="selectMuscleGroup('{{ muscle_group.name }}')">
+                        <img src="{{ muscle_group.url }}" class="card-img" alt="Muscle Group Image">
+                        <div class="card-img-overlay">
+                            <h5 class="card-title">{{ muscle_group.name }}</h5>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        <br>
+        <h3 for="exercise_group" class="section-title">Exercises Group:</h3>
+        <div class="exercise-container">
+            <div class="row row-cols-4 g-4">
+                {% for exercise in exercises %}
+                <div class="my-exercise col-md-3  col-6 d-none mb-4">
+                    <div class="card exercise-card" data-muscle-group="{{ exercise.muscle_group.name }}"> <img
+                            src="{{ exercise.url }}" class="card-img-top" alt="Exercise Image">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ exercise.name }}</h5>
+                            <form id="exercise-form-{{ exercise.id }}" class="exercise-form">
+                                <label for="load-{{ exercise.id }}" class="form-label">Load</label>
+                                <input type="number" class="form-control" id="load-{{ exercise.id }}" name="load"
+                                    value="0">
+                                <label for="sets-{{ exercise.id }}" class="form-label">Sets</label>
+                                <input type="number" class="form-control" id="sets-{{ exercise.id }}" name="sets"
+                                    value="0">
+                                <div class="mb-3">
+                                    <label for="repetitions-{{ exercise.id }}" class="form-label">Repetitions</label>
+                                    <input type="number" class="form-control" id="repetitions-{{ exercise.id }}"
+                                        name="repetitions" value="0">
+                                </div>
+                            </form>
+                        </div>
+                        <div class="card-footer d-flex justify-content-between">
+                            <button type="button" class="btn btn-exercise"
+                                onclick="seeExercise('{{ exercise.name }}', '{{ exercise.youtube_embed}}')">See
+                                Exercise</button>
+                            <button type="button" class="btn btn-exercise"
+                                onclick="selectExercise('{{ exercise.name }}', '{{ exercise.id }}', document.getElementById('load-{{ exercise.id }}').value, document.getElementById('sets-{{ exercise.id }}').value, document.getElementById('repetitions-{{ exercise.id }}').value)">Add</button>
+
+                        </div>
+
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
+
+    </form>
+</main>
+<script>
+  var selectedDay = null;
+var selectedMuscleGroup = null;
+var selectedExerciseId = null;
+var selectedExerciseName = null;
+var selectedUserName = "{{ request.user.username }}";
+
+function selectDay(day) {
+    var buttons = document.querySelectorAll('.btn-days');
+    buttons.forEach(function (button) {
+        button.classList.remove('selected');
+    });
+
+    var selectedButton = document.querySelector('.btn-days[value="' + day + '"]');
+    selectedButton.classList.add('selected');
+
+    selectedDay = day;
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    selectMuscleGroup('all');
+});
+
+function selectMuscleGroup(muscleGroup) {
+    selectedMuscleGroup = muscleGroup;
+    var exerciseCards = document.querySelectorAll('.exercise-card');
+    var muscleGroupCards = document.querySelectorAll('.muscle-group-card');
+
+
+    muscleGroupCards.forEach(function(card) {
+        card.classList.remove('selected');
+    });
+
+
+    var selectedCard = document.querySelector(`.muscle-group-card[onclick="selectMuscleGroup('${muscleGroup}')"]`);
+    if (selectedCard) {
+        selectedCard.classList.add('selected');
+    }
+
+    exerciseCards.forEach(function(card) {
+        var parentExerciseCard = card.closest('.my-exercise');
+
+        if (muscleGroup === 'all' || card.getAttribute('data-muscle-group') === muscleGroup) {
+            parentExerciseCard.classList.add('d-block');
+            parentExerciseCard.classList.remove('d-none');
+        } else {
+            parentExerciseCard.classList.remove('d-block');
+            parentExerciseCard.classList.add('d-none');
+        }
+    });
+}
+
+function selectExercise(exerciseName, exerciseId, load, set, repetition) {
+    selectedExerciseName = exerciseName;
+    selectedExerciseId = exerciseId;
+    var requestData = {
+        user: selectedUserName,
+        exercise: [selectedExerciseId],
+        day_of_week: selectedDay,
+        repetitions: repetition,
+        sets: set,
+        loads: load
+    };
+    fetch("{% url 'setWorkout' %}", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            "X-CSRFToken": "{{ csrf_token }}"
+        },
+        body: JSON.stringify(requestData)
+    })
+        .then(response => {
+            console.log(requestData);
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+}
+
+function seeExercise(exerciseName, youtubeEmbed) {
+    document.getElementById('exercise-title').innerText = exerciseName;
+    if (youtubeEmbed) {
+        document.getElementById('youtube-video').innerHTML = youtubeEmbed;
+    } else {
+        document.getElementById('youtube-video').innerHTML = 'No video available';
+    }
+
+    document.getElementById('exercise-panel').style.display = 'block';
+    document.getElementById('overlay').style.display = 'block';
+    document.body.style.overflow = 'hidden';
+}
+
+function closeExercisePanel() {
+    var videoElement = document.getElementById('youtube-video').querySelector('iframe');
+    if (videoElement) {
+        var videoSrc = videoElement.getAttribute('src');
+        videoElement.setAttribute('src', '');
+        videoElement.setAttribute('src', videoSrc);
+    }
+    document.getElementById('exercise-panel').style.display = 'none';
+    document.getElementById('overlay').style.display = 'none';
+
+    document.body.style.overflow = '';
+}
+</script>
+{% endblock %}

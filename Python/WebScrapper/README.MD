@@ -21,8 +21,8 @@ A **simple webscraper project** developed in Python, using **MVC architecture**,
 ---
 
 ## 🗂️ **Project Structure**
+### WebScrapper/
 ```bash
-WebScrapper/
 ├── app/
 │ ├── controller/
 │ │ └── scraper_controller.py

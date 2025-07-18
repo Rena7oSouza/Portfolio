@@ -59,6 +59,7 @@ behave tests/bdd
 ```
 ## 📁 Project Structure
 ### CHATBOT/
+```bash
 ├── app/
 │ ├── model/
 │ ├── view/
@@ -70,7 +71,7 @@ behave tests/bdd
 ├── main.py
 ├── requirements.txt
 └── README.md
-
+```
 ## 🙋‍♂️ Author
 
 Developed by Renato Souza 

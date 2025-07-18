@@ -50,36 +50,47 @@ WebScrapper/
 ### 🔧 **1. Clone the repository**
 
 ```bash
-git clone https://github.com/yourusername/WebScrapper.git
-cd WebScrapper
+git clone https://github.com/Rena7oSouza/Portfolio.git
+cd Python/WebScrapper
 ```
 
 ### 🔧 2. Create and activate a virtual environment
 
+```bash
 python3 -m venv venv
 source venv/bin/activate
+```
 
 ### 🔧 3. Install dependencies
 
+```bash
 pip install -r requirements.txt
-
+```
 ⚠️ Linux only
 
+```bash
 Install Tkinter if not installed:
 
 sudo apt install python3-tk
+```
 
 ### 🔧 4. Run the GUI
 
+```bash
 python3 main.py
+```
 
 ### 🔧 5. Run unit tests
 
+```bash
 PYTHONPATH=$(pwd) pytest tests/
+```
 
 ### 🔧 6. Run BDD tests
 
+```bash
 PYTHONPATH=$(pwd) behave tests/features/
+```
 
 ## 📝 Requirements
 

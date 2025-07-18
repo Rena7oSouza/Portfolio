@@ -21,7 +21,7 @@ A **simple webscraper project** developed in Python, using **MVC architecture**,
 ---
 
 ## 🗂️ **Project Structure**
-
+```bash
 WebScrapper/
 ├── app/
 │ ├── controller/
@@ -41,7 +41,7 @@ WebScrapper/
 ├── main.py
 ├── requirements.txt
 └── README.md
-
+```
 
 ---
 

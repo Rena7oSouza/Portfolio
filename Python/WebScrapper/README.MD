@@ -38,6 +38,7 @@ A **simple webscraper project** developed in Python, using **MVC architecture**,
 │ ├── exchange.feature
 │ └── steps/
 │ └── steps_exchange.py
+├── .gitignore
 ├── main.py
 ├── requirements.txt
 └── README.md

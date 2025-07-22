@@ -110,7 +110,7 @@ PYTHONPATH=$(pwd) behave tests/features/
     tk (system package on Linux)
 
 
-##🙋‍♂️ Author
+## 🙋‍♂️ Author
 
 Developed by Renato Souza 🔗 https://rena7osouza.github.io/ 📫 renatofrancisco@hotmail.com
 

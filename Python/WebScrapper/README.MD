@@ -113,7 +113,6 @@ PYTHONPATH=$(pwd) behave tests/features/
 ✨ Author
 
 Renato Souza
-GitHub Profile
 
 
 💡 Future improvements

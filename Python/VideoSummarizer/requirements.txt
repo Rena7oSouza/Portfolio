@@ -1,0 +1,7 @@
+pytubefix
+openai-whisper
+transformers
+torch
+tk
+pytest
+behave

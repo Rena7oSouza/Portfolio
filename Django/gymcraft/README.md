@@ -35,32 +35,32 @@ GymCraft is a **workout planner web application** built with Django. It allows u
 git clone https://github.com/Rena7oSouza/Portfolio/tree/main/Django/gymcraft
 cd gymcraft
 ```
-    Create a virtual environment:
+Create a virtual environment:
 
 ```bash
 python -m venv venv
 source venv/bin/activate  # On Windows use venv\Scripts\activate
 ```
-    Install dependencies:
+Install dependencies:
 
 ```bash
 pip install -r requirements.txt
 ```
-    Run migrations:
+Run migrations:
 
 ```bash
 python manage.py makemigrations
 python manage.py migrate
 ```
-    Start the development server:
+Start the development server:
 
 ```bash
 python manage.py runserver
 ```
-    Access http://127.0.0.1:8000 in your browser.
-    To test and input new exercises, access http://127.0.0.1:8000/admin
-    Login with:
-    ```bash
+Access http://127.0.0.1:8000 in your browser.
+To test and input new exercises, access http://127.0.0.1:8000/admin
+Login with:
+```bash
 Username: adm
 Password: adm
 ```

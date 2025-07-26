@@ -70,19 +70,17 @@ Password: adm
 </br>
 www.youtube.com/watch?v=5OW69Y3mnpY
 
-🤝 Contributing
+## 🤝 Contributing
 
 Pull requests are welcome. For major changes, open an issue first to discuss what you would like to change.
 
-📫 Contact
-
-## 📬 Contato
+## 📫 Contact
 
 [![GitHub](https://img.shields.io/badge/GitHub-000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Rena7oSouza)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/renatosouzadeoliveira/)
 [![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:renatofrancisco@hotmail.com)
 
 
-⭐ If you find this project useful, please star it on GitHub.
+## ⭐ If you find this project useful, please star it on GitHub.
 
 

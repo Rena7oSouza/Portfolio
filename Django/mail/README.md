@@ -1,7 +1,7 @@
 # 📨 Mail Sender
 
 **Category**: Django Project
-##📌 Description
+## 📌 Description
 
 Mail is a **simple email-sending** web application built with Django. It allows users to:
 
@@ -26,7 +26,7 @@ Mail is a **simple email-sending** web application built with Django. It allows 
 -SMTP
 -Git
 
-##📂 Installation
+## 📂 Installation
 
 Clone the repository:
 

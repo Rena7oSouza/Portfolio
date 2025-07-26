@@ -6,6 +6,7 @@
 Mail is a **simple email-sending** web application built with Django. It allows users to:
 
 ✅ Fill a form to send emails
+
 ✅ Define subject, recipient and message
 
 ## 💡 Features

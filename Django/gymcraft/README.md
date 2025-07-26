@@ -75,9 +75,9 @@ Pull requests are welcome. For major changes, open an issue first to discuss wha
 
 📫 Contact
 
-    LinkedIn
-
-    Portfolio
+- [GitHub](https://github.com/Rena7oSouza)
+- [LinkedIn](https://www.linkedin.com/in/renatosouzadeoliveira/)
+- ✉️ Email: [seuemail@exemplo.com](mailto:renatofrancisco@hotmail.com)
 
 ⭐ If you find this project useful, please star it on GitHub.
 

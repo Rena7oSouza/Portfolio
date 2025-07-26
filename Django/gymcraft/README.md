@@ -23,6 +23,7 @@ GymCraft is a **workout planner web application** built with Django. It allows u
 - Python
 - Django
 - HTML, CSS
+- Javascript
 - Bootstrap
 - SQLite (default Django database)
 - Git

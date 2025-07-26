@@ -75,9 +75,12 @@ Pull requests are welcome. For major changes, open an issue first to discuss wha
 
 📫 Contact
 
-- [GitHub](https://github.com/Rena7oSouza)
-- [LinkedIn](https://www.linkedin.com/in/renatosouzadeoliveira/)
-- ✉️ Email: [renatofrancisco@hotmail.com](mailto:renatofrancisco@hotmail.com)
+## 📬 Contato
+
+[![GitHub](https://img.shields.io/badge/GitHub-000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Rena7oSouza)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/renatosouzadeoliveira/)
+[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:renatosouzadeoliveira@outlook.com)
+
 
 ⭐ If you find this project useful, please star it on GitHub.
 

@@ -1,4 +1,4 @@
-#📨 Mail Sender
+# 📨 Mail Sender
 
 **Category**: Django Project
 ##📌 Description
